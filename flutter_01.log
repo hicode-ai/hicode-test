@@ -1,0 +1,78 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run -d macos
+
+## exception
+
+SocketException: SocketException: Read failed (OS Error: Input/output error, errno = 5), port = 0
+
+```
+#0      _NativeSocket.read (dart:io-patch/socket_patch.dart:1344:33)
+#1      _RawSocket.read (dart:io-patch/socket_patch.dart:2385:26)
+#2      _Socket._onData (dart:io-patch/socket_patch.dart:2906:28)
+#3      _rootRunUnary (dart:async/zone.dart:1546:13)
+#4      _CustomZone.runUnary (dart:async/zone.dart:1429:19)
+#5      _CustomZone.runUnaryGuarded (dart:async/zone.dart:1329:7)
+#6      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)
+#7      _BufferingStreamSubscription._add (dart:async/stream_impl.dart:312:7)
+#8      _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:798:19)
+#9      _StreamController._add (dart:async/stream_controller.dart:663:7)
+#10     _StreamController.add (dart:async/stream_controller.dart:618:5)
+#11     new _RawSocket.<anonymous closure> (dart:io-patch/socket_patch.dart:2326:31)
+#12     _NativeSocket.issueReadEvent.issue (dart:io-patch/socket_patch.dart:1649:14)
+#13     _microtaskLoop (dart:async/schedule_microtask.dart:40:21)
+#14     _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+#15     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:127:13)
+#16     _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:194:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.32.8, on macOS 15.5 24F74 darwin-arm64, locale en-IN) [708ms]
+    • Flutter version 3.32.8 on channel stable at /Users/highroxx/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision edada7c56e (3 weeks ago), 2025-07-25 14:08:03 +0000
+    • Engine revision ef0cd00091
+    • Dart version 3.8.1
+    • DevTools version 2.45.1
+
+[✗] Android toolchain - develop for Android devices [150ms]
+    ✗ Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/to/macos-android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[!] Xcode - develop for iOS and macOS (Xcode 16.4) [1,312ms]
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 16F6
+    ✗ Unable to get list of installed Simulator runtimes.
+    • CocoaPods version 1.16.2
+
+[✓] Chrome - develop for the web [4ms]
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[!] Android Studio (not installed) [3ms]
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/to/macos-android-setup for detailed instructions).
+
+[✓] VS Code (version 1.103.0) [3ms]
+    • VS Code at /Users/highroxx/Downloads/Visual Studio Code.app/Contents
+    • Flutter extension can be installed from:
+      🔨 https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+[✓] Connected device (2 available) [5.8s]
+    • macOS (desktop) • macos  • darwin-arm64   • macOS 15.5 24F74 darwin-arm64
+    • Chrome (web)    • chrome • web-javascript • Google Chrome 139.0.7258.66
+
+[✓] Network resources [437ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 3 categories.
+```
