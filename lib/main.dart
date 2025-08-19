@@ -42,11 +42,14 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+codex/restore-and-implement-beatspark-features-d8cn24
             Text(
               'Welcome to BeatSpark',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
             const SizedBox(height: 16),
+
+main
             ElevatedButton.icon(
               icon: const Icon(Icons.mic),
               label: const Text('Record Voice Memo'),
